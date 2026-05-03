@@ -1,52 +1,106 @@
 const modules = [
-  {
-    name: 'Planetary Registry',
-    href: '/planets',
-    description: 'ODIN-PR planets, civilizations, and registry systems.'
-  },
-  {
-    name: 'Moons & Systems',
-    href: '/moons-systems',
-    description: 'Moon systems, orbital continuity, and expansion interfaces.'
-  },
-  {
-    name: 'Ecosystem',
-    href: '/ecosystem',
-    description: 'Connected OneGodian systems and infrastructure layers.'
-  }
+  { name: 'Dashboard', href: '/dashboard', eyebrow: 'Command Hub', description: 'Open the central operating view for app modules, priorities, and system status.' },
+  { name: 'Ecosystem', href: '/ecosystem', eyebrow: 'System Directory', description: 'Browse connected OneGodian platforms, domains, infrastructure layers, and sync targets.' },
+  { name: 'Registry', href: '/registry', eyebrow: 'ODIN Index', description: 'Access registry categories for planets, systems, certificates, products, and records.' },
+  { name: 'Planets', href: '/planets', eyebrow: 'ODIN-PR', description: 'Explore the 25-world OneGodian Galaxy™ planetary registry.' },
+  { name: 'Moons & Systems', href: '/moons-systems', eyebrow: 'Orbital Systems', description: 'Review moon systems, orbital continuity, expansion interfaces, and Elyndria™ structures.' },
+  { name: 'Tools', href: '/tools', eyebrow: 'Utilities', description: 'Open verification, lookup, time conversion, sync monitoring, and product tooling.' },
+  { name: 'Media', href: '/media', eyebrow: 'Canon Library', description: 'Access story worlds, planetary visuals, audio, posters, and video archive categories.' },
+  { name: 'Products', href: '/products', eyebrow: 'Commerce', description: 'Organize digital downloads, certificates, courses, memberships, and planetary stores.' },
+  { name: 'Certificates', href: '/certificates', eyebrow: 'OBP-1', description: 'Prepare certificate verification, holder records, issuer views, and QR validation flows.' },
+  { name: 'Profile', href: '/profile', eyebrow: 'Identity', description: 'View account, membership, registry alignment, downloads, and certificate placeholders.' }
+];
+
+const statuses = ['Node App Live', 'Hostinger Deployment Active', 'ODIN Systems Online', 'Static Fallback Enabled'];
+
+const workflows = [
+  'Sync OneGodian.org public systems into the ecosystem directory',
+  'Expand ODIN registry records into reusable data modules',
+  'Connect certificate verification after Stripe and database hardening',
+  'Prepare mobile-ready navigation for official v1 and app-store wrappers'
 ];
 
 export default function HomePage() {
   return (
-    <main style={{minHeight:'100vh',background:'#02060c',color:'#fff',padding:'48px',fontFamily:'Arial, sans-serif'}}>
-      <div style={{maxWidth:'1100px',margin:'0 auto'}}>
-        <p style={{color:'#00f2ff',textTransform:'uppercase',letterSpacing:'0.12em'}}>OneGodian Platform</p>
-        <h1 style={{fontSize:'64px',margin:'12px 0'}}>OneGodian Everything App</h1>
-        <p style={{maxWidth:'720px',lineHeight:'1.7',color:'#c5d7e3'}}>
-          Central application for the OneGodian ecosystem including ODIN registry systems,
-          planets, moon systems, media, tools, and synchronized platform infrastructure.
-        </p>
+    <main className="home-page">
+      <section className="hero-shell">
+        <nav className="top-nav" aria-label="Primary navigation">
+          <a href="/" className="brand-mark">OneGodian App</a>
+          <div className="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ecosystem">Ecosystem</a>
+            <a href="/registry">Registry</a>
+            <a href="/planets">Planets</a>
+          </div>
+        </nav>
 
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:'20px',marginTop:'40px'}}>
+        <div className="hero-grid">
+          <div>
+            <p className="kicker">OneGodian Platform · app.onegodian.com</p>
+            <h1>OneGodian Everything App</h1>
+            <p className="hero-copy">
+              The central Node/Next.js interface for the OneGodian ecosystem: ODIN registry systems,
+              planetary canon, moon systems, products, certificates, media, tools, and synchronized
+              platform infrastructure.
+            </p>
+            <div className="hero-actions">
+              <a className="button primary" href="/dashboard">Open Dashboard</a>
+              <a className="button secondary" href="/ecosystem">Explore Ecosystem</a>
+            </div>
+          </div>
+
+          <aside className="status-panel" aria-label="Deployment status">
+            <p className="panel-label">Production Status</p>
+            {statuses.map((status) => (
+              <div className="status-row" key={status}>
+                <span className="status-dot" />
+                <span>{status}</span>
+              </div>
+            ))}
+          </aside>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-heading">
+          <p className="kicker">Module Wireframe</p>
+          <h2>Core app navigation</h2>
+          <p>
+            Each module is linked from the homepage so the deployed shell behaves like a real app gateway while deeper
+            database-backed workflows are added in controlled phases.
+          </p>
+        </div>
+
+        <div className="module-grid">
           {modules.map((module) => (
-            <a
-              key={module.href}
-              href={module.href}
-              style={{
-                border:'1px solid rgba(0,242,255,.25)',
-                borderRadius:'20px',
-                padding:'24px',
-                textDecoration:'none',
-                color:'#fff',
-                background:'rgba(255,255,255,.03)'
-              }}
-            >
-              <h2>{module.name}</h2>
-              <p style={{color:'#b7cad8',lineHeight:'1.6'}}>{module.description}</p>
+            <a key={module.href} href={module.href} className="module-card">
+              <span>{module.eyebrow}</span>
+              <h3>{module.name}</h3>
+              <p>{module.description}</p>
             </a>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section className="section-block split-section">
+        <div className="section-heading">
+          <p className="kicker">Operating Model</p>
+          <h2>Sync systems into one interface</h2>
+          <p>
+            WordPress remains the public narrative and commerce layer. The Node app becomes the operational interface for records,
+            verification, user access, and system coordination.
+          </p>
+        </div>
+
+        <div className="workflow-panel">
+          {workflows.map((workflow, index) => (
+            <div className="workflow-row" key={workflow}>
+              <strong>{String(index + 1).padStart(2, '0')}</strong>
+              <span>{workflow}</span>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
