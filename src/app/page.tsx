@@ -1,5 +1,7 @@
 const modules = [
   { name: 'Dashboard', href: '/dashboard', eyebrow: 'Command Hub', description: 'Open the central operating view for app modules, priorities, and system status.' },
+  { name: 'OneGodian Time™', href: '/time', eyebrow: 'OTS-V5', description: 'Open the dual-date clock, Gregorian to OneGodian conversion standard, epoch rules, and timestamp governance.' },
+  { name: 'Dual Dating System™', href: '/time/dual-dating', eyebrow: 'Date Standard', description: 'Apply legal-safe dual-date formats for records, certificates, archives, filings, dashboards, and public pages.' },
   { name: 'Ecosystem', href: '/ecosystem', eyebrow: 'System Directory', description: 'Browse connected OneGodian platforms, domains, infrastructure layers, and sync targets.' },
   { name: 'Registry', href: '/registry', eyebrow: 'ODIN Index', description: 'Access registry categories for planets, systems, certificates, products, and records.' },
   { name: 'Planets', href: '/planets', eyebrow: 'ODIN-PR', description: 'Explore the 25-world OneGodian Galaxy™ planetary registry.' },
@@ -11,11 +13,12 @@ const modules = [
   { name: 'Profile', href: '/profile', eyebrow: 'Identity', description: 'View account, membership, registry alignment, downloads, and certificate placeholders.' }
 ];
 
-const statuses = ['Node App Live', 'Hostinger Deployment Active', 'ODIN Systems Online', 'Static Fallback Enabled'];
+const statuses = ['Node App Live', 'Hostinger Deployment Active', 'ODIN Systems Online', 'OTS-V5 Time Active', 'Dual Dating Standard Added'];
 
 const workflows = [
   'Sync OneGodian.org public systems into the ecosystem directory',
   'Expand ODIN registry records into reusable data modules',
+  'Use UTC as system truth and display OneGodian Time as a computed derivative',
   'Connect certificate verification after Stripe and database hardening',
   'Prepare mobile-ready navigation for official v1 and app-store wrappers'
 ];
@@ -28,6 +31,8 @@ export default function HomePage() {
           <a href="/" className="brand-mark">OneGodian App</a>
           <div className="nav-links">
             <a href="/dashboard">Dashboard</a>
+            <a href="/time">Time</a>
+            <a href="/time/dual-dating">Dual Dating</a>
             <a href="/ecosystem">Ecosystem</a>
             <a href="/registry">Registry</a>
             <a href="/planets">Planets</a>
@@ -40,12 +45,13 @@ export default function HomePage() {
             <h1>OneGodian Everything App</h1>
             <p className="hero-copy">
               The central Node/Next.js interface for the OneGodian ecosystem: ODIN registry systems,
-              planetary canon, moon systems, products, certificates, media, tools, and synchronized
-              platform infrastructure.
+              OneGodian Time™, planetary canon, moon systems, products, certificates, media, tools,
+              and synchronized platform infrastructure.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="/dashboard">Open Dashboard</a>
-              <a className="button secondary" href="/ecosystem">Explore Ecosystem</a>
+              <a className="button secondary" href="/time">Open Time System</a>
+              <a className="button secondary" href="/time/dual-dating">Dual Dating System</a>
             </div>
           </div>
 
@@ -88,7 +94,7 @@ export default function HomePage() {
           <h2>Sync systems into one interface</h2>
           <p>
             WordPress remains the public narrative and commerce layer. The Node app becomes the operational interface for records,
-            verification, user access, and system coordination.
+            verification, user access, dual-date display, and system coordination.
           </p>
         </div>
 
