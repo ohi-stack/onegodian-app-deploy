@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'OneGodian Everything App',
-  description: 'The central OneGodian ecosystem app for ODIN registry, planets, systems, tools, media, and platform interfaces.'
+  title: 'The OneGodian App',
+  description:
+    'The public and member-facing OneGodian application for dashboard access, time tools, dual dating, ecosystem navigation, registry records, planets, OMOS, products, media, learning, and certificates.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
