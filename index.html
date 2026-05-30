@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OneGodian App | Central Access Dashboard</title>
+  <meta name="description" content="Central access layer for the OneGodian ecosystem: members, campaigns, registry, tools, media, learning, certificates, and support." />
+  <style>
+    :root{--bg:#05070d;--panel:#0d1220;--panel2:#111a2c;--text:#f7f7fb;--muted:#b8c0d4;--cyan:#42e8ff;--gold:#d8b35a;--purple:#8b5cf6;--border:rgba(255,255,255,.12)}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top left,rgba(66,232,255,.16),transparent 34%),radial-gradient(circle at bottom right,rgba(139,92,246,.18),transparent 34%),linear-gradient(180deg,#05070d,#0a0f1c 55%,#05070d);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.55} a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:28px 18px 70px}.back{color:var(--muted);display:inline-block;margin-bottom:28px}.kicker{color:var(--cyan);letter-spacing:.34em;text-transform:uppercase;font-size:12px;font-weight:800}.hero{padding:34px 0 22px}.hero h1{font-size:clamp(42px,8vw,88px);line-height:.96;margin:16px 0;letter-spacing:.04em}.hero p{font-size:clamp(18px,3vw,26px);color:var(--muted);max-width:900px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{border:1px solid var(--border);background:rgba(255,255,255,.06);padding:13px 18px;border-radius:999px;font-weight:800}.btn.primary{border-color:rgba(66,232,255,.45);color:var(--cyan)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:16px;margin-top:30px}.card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--border);border-radius:22px;padding:22px;min-height:210px;box-shadow:0 18px 44px rgba(0,0,0,.26)}.card .tag{color:var(--gold);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.card h2{font-size:25px;margin:12px 0 8px}.card p{color:var(--muted);margin:0 0 18px}.open{display:inline-block;color:var(--cyan);font-weight:900}.section{margin-top:46px}.section h2{font-size:34px;margin:0 0 10px}.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,.04);color:var(--muted)}.row strong{color:var(--text)}footer{margin-top:54px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);padding-top:22px}@media(max-width:600px){.row{display:block}.hero h1{font-size:48px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="/">← Home</a>
+    <section class="hero">
+      <div class="kicker">Central Access</div>
+      <h1>Dashboard</h1>
+      <p>The OneGodian App is the central access layer for the OneGodian ecosystem. It connects members, campaigns, registries, tools, certificates, media, learning resources, and operational systems into one structured interface.</p>
+      <div class="actions"><a class="btn primary" href="/members">Open Members</a><a class="btn" href="/campaigns/remember">Remember Campaign</a><a class="btn" href="/support">Support OneGodian</a></div>
+    </section>
+    <section class="grid" aria-label="OneGodian app modules">
+      <a class="card" href="/members"><div class="tag">Identity</div><h2>Members</h2><p>Member profile, status, digital ID, certificates, and community access.</p><span class="open">Open Members →</span></a>
+      <a class="card" href="/campaigns"><div class="tag">Outreach</div><h2>Campaigns</h2><p>Active campaigns, contribution drives, public outreach, and campaign resources.</p><span class="open">View Campaigns →</span></a>
+      <a class="card" href="/campaigns/remember"><div class="tag">Remember</div><h2>Remember Campaign</h2><p>Preserve memory, origin, purpose, dignity, unity, and disciplined growth.</p><span class="open">Open Campaign →</span></a>
+      <a class="card" href="/registry"><div class="tag">Records</div><h2>Registry</h2><p>ODIN records, verification entries, certificates, filings, and system archives.</p><span class="open">Open Registry →</span></a>
+      <a class="card" href="/tools"><div class="tag">Utilities</div><h2>Tools</h2><p>Forms, calculators, onboarding utilities, converters, and operational resources.</p><span class="open">Open Tools →</span></a>
+      <a class="card" href="/media"><div class="tag">Publishing</div><h2>Media</h2><p>Videos, music, publications, visual assets, and campaign media.</p><span class="open">Open Media →</span></a>
+      <a class="card" href="/learn"><div class="tag">Education</div><h2>Learning</h2><p>Courses, onboarding, resources, certifications, and knowledge pathways.</p><span class="open">Start Learning →</span></a>
+      <a class="card" href="/certificates"><div class="tag">Credentials</div><h2>Certificates</h2><p>Request, view, and verify OneGodian certificates and digital credentials.</p><span class="open">Open Certificates →</span></a>
+      <a class="card" href="/support"><div class="tag">Support</div><h2>Contributions</h2><p>Support development of OneGodian infrastructure, publishing, systems, and media.</p><span class="open">Support OneGodian →</span></a>
+    </section>
+    <section class="section"><h2>Production Routes</h2><div class="list">
+      <div class="row"><strong>/members</strong><span>Member dashboard and identity access</span></div>
+      <div class="row"><strong>/campaigns/remember</strong><span>Remember Campaign landing page</span></div>
+      <div class="row"><strong>/registry</strong><span>Records and verification access</span></div>
+      <div class="row"><strong>/tools</strong><span>Operational tools and forms</span></div>
+      <div class="row"><strong>/certificates</strong><span>Certificate verification and requests</span></div>
+    </div></section>
+    <footer>© 2026 ONEGODIAN, LLC. Private commercial, software, publishing, infrastructure, and operational enterprise layer. All Rights Reserved.</footer>
+  </main>
+</body>
+</html>
