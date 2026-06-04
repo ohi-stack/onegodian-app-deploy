@@ -2,21 +2,91 @@
 
 Deployment-ready Next.js application for `app.onegodian.com`.
 
-This repository is the Hostinger-compatible deployment mirror for the OneGodian Everything App. The development source of truth remains:
+This repository is now the production-facing source of truth for the OneGodian Everything App deployment.
+
+The earlier development/source repository was:
 
 ```txt
 ohi-stack/onegodian-app
 ```
 
-The deployable source path in the development repo is:
+The deploy repository now carries the consolidated app direction for Hostinger-compatible deployment, route standards, domain separation, and public/member-facing app behavior.
+
+## Production domain
 
 ```txt
-apps/web
+https://app.onegodian.com
 ```
 
-This deployment repository should contain the contents of `apps/web` at the repository root so Hostinger can detect the app as a valid Next.js project.
+## Purpose
+
+The OneGodian App is the public and member-facing experience layer for the OneGodian ecosystem.
+
+It provides identity-facing and member-facing application routes, including dashboards, ecosystem navigation, registry viewing, products, certificates, tools, media, settings, documentation, and connected platform access.
+
+## Domain Separation Rule
+
+App = experience.
+
+Console = control.
+
+The OneGodian App must not contain internal command-console features, privileged operator tools, ACC execution controls, OCP policy mutation, OEG execution routing, adapter administration, approval queues, kill-switch controls, internal audit/log mutation tools, deployment controls, or administrative command surfaces.
+
+Internal command/control functions belong under the separate OneGodian Console surface at:
+
+```txt
+https://console.onegodian.com
+```
+
+## Allowed App Areas
+
+Public/member-facing features may live in the app, including:
+
+```txt
+/dashboard
+/ecosystem
+/registry
+/tools
+/members
+/certificates
+/products
+/media
+/settings
+/docs
+/galaxy
+/time
+/time/dual-dating
+/omos
+/capital
+/learning
+/api/health
+/api/manifest
+/api/tools
+/api/stats
+```
+
+## Restricted Console-Only Areas
+
+Do not place these inside the OneGodian App:
+
+```txt
+ACC
+agent administration
+OCP authorization controls
+OEG execution routing
+workflow administration
+policy editing
+approvals
+audit mutation
+internal logs
+adapters
+deployment controls
+kill-switch controls
+```
 
 ## Required root structure
+
+Hostinger should detect this repository as a valid Next.js project from the repository root.
 
 ```txt
 package.json
@@ -96,3 +166,13 @@ npm run build
 ```
 
 all pass from the repository root.
+
+## Current standard
+
+If a feature is public-facing or member-facing, it may live in the App.
+
+If a feature is operator-facing, privileged, administrative, or execution-governing, it belongs in the Console.
+
+## Production priority
+
+Keep `app.onegodian.com` synchronized with this deploy repository after every content, routing, integration, or UI update.
