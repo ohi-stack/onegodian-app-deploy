@@ -7,6 +7,13 @@ const primaryModules = [
       'Open the main OneGodian App dashboard for identity, membership access, certificates, campaigns, tools, deployment status, and ecosystem navigation.',
   },
   {
+    name: 'Production Operations',
+    href: '/production',
+    eyebrow: 'Live Ops',
+    description:
+      'Open the production control surface for deployment status, endpoint checks, launch discipline, build/redeploy rules, and release accountability.',
+  },
+  {
     name: 'OneGodian Galaxy™',
     href: '/galaxy',
     eyebrow: 'Galaxy Parent Module',
@@ -88,6 +95,7 @@ const primaryModules = [
 const statusItems = [
   'App deployment live at app.onegodian.com',
   'GitHub auto-deployment connected through Hostinger',
+  'Production Operations Dashboard staged at /production',
   'Public/member-facing app boundary active',
   'Galaxy, registry, time, members, OMOS, media, products, learning, and capital modules staged',
   'Console and internal administration remain separate from the public app',
@@ -106,6 +114,7 @@ const ecosystemPortals = [
 
 const nextPriorities = [
   'Keep app.onegodian.com synced with the deploy repository after every content update.',
+  'Use /production as the live operations checklist after each Codex merge.',
   'Fill each module route with structured content, status data, and clear calls to action.',
   'Connect certificates to QRV verification and certificate record pages.',
   'Connect products to OneGodian.com commerce categories and campaign collections.',
@@ -121,6 +130,7 @@ export default function HomePage() {
           <a href="/" className="brand-mark">OneGodian App</a>
           <div className="nav-links">
             <a href="/dashboard">Dashboard</a>
+            <a href="/production">Production</a>
             <a href="/galaxy">Galaxy</a>
             <a href="/registry">Registry</a>
             <a href="/time">Time</a>
@@ -137,10 +147,11 @@ export default function HomePage() {
             <p className="hero-copy">
               The public and member-facing command dashboard for the OneGodian digital ecosystem: Galaxy,
               ODIN registry, OneGodian Time™, members, certificates, media, learning, products, OMOS,
-              capital readiness, tools, and connected platform infrastructure.
+              capital readiness, tools, production operations, and connected platform infrastructure.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="/dashboard">Open Dashboard</a>
+              <a className="button secondary" href="/production">Production Operations</a>
               <a className="button secondary" href="/galaxy">Explore Galaxy</a>
               <a className="button secondary" href="/ecosystem">View Ecosystem</a>
             </div>
@@ -164,7 +175,7 @@ export default function HomePage() {
           <h2>Real app areas now staged</h2>
           <p>
             The app is now the public and member-facing access point for participation, records, media,
-            learning, products, campaign resources, Galaxy navigation, and ecosystem coordination.
+            learning, products, campaign resources, Galaxy navigation, production status, and ecosystem coordination.
           </p>
         </div>
 
