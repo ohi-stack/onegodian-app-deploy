@@ -1,7 +1,46 @@
-const modules=[
-'/planets','/moons-systems','/ecosystem','/registry','/tools','/media','/products','/certificates','/profile'
-];
+import { appPages, deploymentStandard, pluginBridges } from '@/lib/app-content';
 
-export default function DashboardPage(){
-return <main className="page"><a href="/">← Home</a><p className="kicker">Central Access</p><h1>Dashboard</h1><p className="lead">Unified navigation into the OneGodian platform ecosystem.</p><div className="grid">{modules.map((route)=><a className="card" href={route} key={route}><h2>{route.replace('/','')}</h2><p>Open module</p></a>)}</div></main>
+export default function DashboardPage() {
+  return (
+    <main className="page">
+      <a href="/">← Home</a>
+      <p className="kicker">Command Home</p>
+      <h1>OneGodian App Dashboard</h1>
+      <p className="lead">
+        Public and member-facing control surface for OneGodian modules, WordPress plugin bridges,
+        production routes, deployment status, and platform navigation.
+      </p>
+
+      <section className="grid">
+        {appPages.map((page) => (
+          <a className="card" href={page.route} key={page.route}>
+            <p className="kicker">{page.eyebrow}</p>
+            <h2>{page.title}</h2>
+            <p>{page.description}</p>
+            <strong>{page.status}</strong>
+          </a>
+        ))}
+      </section>
+
+      <section className="card wide-card">
+        <p className="kicker">Deployment Standard</p>
+        <h2>Deploy from onegodian-app-deploy only</h2>
+        <p>{deploymentStandard.rule}</p>
+        <p><strong>Repository:</strong> {deploymentStandard.repository}</p>
+        <p><strong>Domain:</strong> {deploymentStandard.deploymentDomain}</p>
+        <p><strong>Branch:</strong> {deploymentStandard.branch}</p>
+      </section>
+
+      <section className="grid">
+        {pluginBridges.map((bridge) => (
+          <article className="card" key={bridge.slug}>
+            <p className="kicker">WordPress Bridge</p>
+            <h2>{bridge.name}</h2>
+            <p>{bridge.description}</p>
+            <p><strong>Status:</strong> {bridge.status}</p>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
 }
