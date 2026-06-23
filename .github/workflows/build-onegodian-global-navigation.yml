@@ -5,6 +5,10 @@ on:
     paths:
       - 'plugins/onegodian-global-navigation/**'
       - '.github/workflows/build-onegodian-global-navigation.yml'
+  pull_request:
+    paths:
+      - 'plugins/onegodian-global-navigation/**'
+      - '.github/workflows/build-onegodian-global-navigation.yml'
   workflow_dispatch:
 
 jobs:
