@@ -1,0 +1,39 @@
+name: Build OneGodian Global Navigation Plugin
+
+on:
+  push:
+    paths:
+      - 'plugins/onegodian-global-navigation/**'
+      - '.github/workflows/build-onegodian-global-navigation.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify plugin files
+        run: |
+          test -f plugins/onegodian-global-navigation/onegodian-global-navigation.php
+          test -f plugins/onegodian-global-navigation/readme.txt
+          grep -q "Version: 1.0.0" plugins/onegodian-global-navigation/onegodian-global-navigation.php
+          grep -q "define('OGN_VERSION', '1.0.0')" plugins/onegodian-global-navigation/onegodian-global-navigation.php
+
+      - name: PHP syntax check
+        run: php -l plugins/onegodian-global-navigation/onegodian-global-navigation.php
+
+      - name: Build plugin zip
+        run: |
+          mkdir -p dist
+          cd plugins
+          zip -r ../dist/onegodian-global-navigation-v1.0.0.zip onegodian-global-navigation -x "*.DS_Store"
+          cd ..
+          unzip -t dist/onegodian-global-navigation-v1.0.0.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: onegodian-global-navigation-v1.0.0
+          path: dist/onegodian-global-navigation-v1.0.0.zip
