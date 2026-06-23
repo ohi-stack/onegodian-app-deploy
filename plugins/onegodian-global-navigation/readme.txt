@@ -23,6 +23,7 @@ Core output:
 * Mobile collapsible navigation.
 * Ecosystem switcher.
 * Sticky global header.
+* Production ZIP build target: onegodian-global-navigation-v1.0.0.zip.
 
 == Shortcodes ==
 
