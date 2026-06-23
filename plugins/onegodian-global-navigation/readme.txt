@@ -24,6 +24,7 @@ Core output:
 * Ecosystem switcher.
 * Sticky global header.
 * Production ZIP build target: onegodian-global-navigation-v1.0.0.zip.
+* Artifact branch: build/onegodian-global-navigation-zip.
 
 == Shortcodes ==
 
