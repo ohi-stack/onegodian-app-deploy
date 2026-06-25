@@ -1,0 +1,43 @@
+name: Build OneGodian Members v1.7.1 WooCommerce Sync
+
+on:
+  push:
+    paths:
+      - 'plugins/onegodian-members/**'
+      - '.github/workflows/build-onegodian-members-v1.7.1.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify source files
+        run: |
+          test -f plugins/onegodian-members/onegodian-members.php
+          test -f plugins/onegodian-members/readme.txt
+          grep -q "Version: 1.7.1" plugins/onegodian-members/onegodian-members.php
+          grep -q "define('OGM_VERSION', '1.7.1')" plugins/onegodian-members/onegodian-members.php
+          grep -q "ogm_product_mapping" plugins/onegodian-members/onegodian-members.php
+          grep -q "onegodian_affiliate_link" plugins/onegodian-members/onegodian-members.php
+          grep -q "onegodian_affiliate_dashboard" plugins/onegodian-members/onegodian-members.php
+
+      - name: PHP syntax check
+        run: php -l plugins/onegodian-members/onegodian-members.php
+
+      - name: Build plugin zip
+        run: |
+          mkdir -p dist
+          cd plugins
+          zip -r ../dist/onegodian-members-v1.7.1-woocommerce-sync.zip onegodian-members -x "*.DS_Store"
+          cd ..
+          unzip -t dist/onegodian-members-v1.7.1-woocommerce-sync.zip
+          unzip -l dist/onegodian-members-v1.7.1-woocommerce-sync.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: onegodian-members-v1.7.1-woocommerce-sync
+          path: dist/onegodian-members-v1.7.1-woocommerce-sync.zip
