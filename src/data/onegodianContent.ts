@@ -1,5 +1,15 @@
 export const onegodianContentLibrary = [
   {
+    slug: 'belief-mapper',
+    title: 'Belief Mapper™',
+    category: 'Identity / Interactive Reflection',
+    route: '/belief-mapper',
+    summary:
+      'A seven-dimension voluntary reflection experience that maps belief, identity, unity, relationship, tradition, community, and purpose into a clear public journey result.',
+    source: 'OneGodian Platform Plugin Belief Mapper v1.1.0',
+    status: 'production',
+  },
+  {
     slug: 'ai-system-prompt',
     title: 'The Onegodian AI System Prompt',
     category: 'Protocol / AI Governance',
@@ -93,6 +103,7 @@ export const onegodianContentLibrary = [
 
 export const appModules = [
   { title: 'Dashboard', href: '/dashboard', description: 'Public/member app overview and module navigation.' },
+  { title: 'Belief Mapper', href: '/belief-mapper', description: 'Interactive reflection across belief, identity, unity, community, and purpose.' },
   { title: 'Ecosystem', href: '/ecosystem', description: 'Connected OneGodian domains and platform boundaries.' },
   { title: 'Registry', href: '/registry', description: 'ODIN, QRV, certificate, product, identity, and system records.' },
   { title: 'Members', href: '/members', description: 'Member access, onboarding, identity stages, and certificates.' },
