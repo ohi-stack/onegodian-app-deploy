@@ -1,12 +1,14 @@
 import { NextResponse } from 'next/server';
+import { universityCourseCount, universitySchools } from '@/data/universityCatalog';
 
 export async function GET() {
   return NextResponse.json({
     app: 'OneGodian App',
     domain: 'app.onegodian.com',
-    version: '1.1.0-production',
+    version: '1.2.0-production',
     modules: [
       'dashboard',
+      'university',
       'belief-mapper',
       'ecosystem',
       'registry',
@@ -17,6 +19,14 @@ export async function GET() {
       'omos',
       'learning'
     ],
+    university: {
+      route: '/university',
+      canonicalLms: 'https://u.onegodian.org',
+      schools: universitySchools.length,
+      courses: universityCourseCount,
+      enrollmentAuthority: 'University of OneGodian LMS',
+      appRole: 'catalog-and-routing-gateway'
+    },
     beliefMapper: {
       route: '/belief-mapper',
       mode: 'seven-dimension-reflection',
