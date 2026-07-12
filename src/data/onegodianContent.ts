@@ -1,5 +1,15 @@
 export const onegodianContentLibrary = [
   {
+    slug: 'university-of-onegodian',
+    title: 'University of OneGodian Course Catalog',
+    category: 'Education / University',
+    route: '/university',
+    summary:
+      'App-native gateway to University of OneGodian schools, structured course pathways, foundational studies, and canonical LMS enrollment links.',
+    source: 'University of OneGodian Courses',
+    status: 'production',
+  },
+  {
     slug: 'belief-mapper',
     title: 'Belief Mapper™',
     category: 'Identity / Interactive Reflection',
@@ -35,7 +45,7 @@ export const onegodianContentLibrary = [
     category: 'Compliance / Domain Governance',
     route: '/docs/domain-separation',
     summary:
-      'Compliance-ready domain segmentation policy separating identity, education, community, commerce, and control-plane functions across the OneGodian ecosystem.',
+      'Compliance-ready domain segmentation policy separating identity, education, community, commerce, and control-plane functions across the Onegodian ecosystem.',
     source: 'STRUCTURAL FRAMEWORK & DOMAIN SEPARATION POLICY.pdf',
     status: 'staged',
   },
@@ -103,6 +113,7 @@ export const onegodianContentLibrary = [
 
 export const appModules = [
   { title: 'Dashboard', href: '/dashboard', description: 'Public/member app overview and module navigation.' },
+  { title: 'University', href: '/university', description: 'University schools, courses, foundational pathways, and LMS enrollment routes.' },
   { title: 'Belief Mapper', href: '/belief-mapper', description: 'Interactive reflection across belief, identity, unity, community, and purpose.' },
   { title: 'Ecosystem', href: '/ecosystem', description: 'Connected OneGodian domains and platform boundaries.' },
   { title: 'Registry', href: '/registry', description: 'ODIN, QRV, certificate, product, identity, and system records.' },
@@ -111,5 +122,5 @@ export const appModules = [
   { title: 'Media', href: '/media', description: 'Visuals, video systems, campaign assets, and content pipelines.' },
   { title: 'Capital', href: '/capital', description: 'Institutional positioning, readiness, valuation references, and disclosure-aware materials.' },
   { title: 'OMOS', href: '/omos', description: 'OHI runtime, protocol, algorithm, and technical architecture.' },
-  { title: 'Learning', href: '/learning', description: 'Education architecture and course-routing model.' },
+  { title: 'Learning', href: '/learning', description: 'Education architecture, University routing, courses, and certificate pathways.' },
 ];
