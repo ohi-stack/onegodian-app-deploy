@@ -22,7 +22,7 @@ https://app.onegodian.com
 
 The OneGodian App is the public and member-facing experience layer for the OneGodian ecosystem.
 
-It provides identity-facing and member-facing application routes, including dashboards, ecosystem navigation, registry viewing, products, certificates, tools, media, settings, documentation, and connected platform access.
+It provides identity-facing and member-facing application routes, including dashboards, University schools and courses, ecosystem navigation, registry viewing, products, certificates, tools, media, settings, documentation, and connected platform access.
 
 ## Domain Separation Rule
 
@@ -44,6 +44,7 @@ Public/member-facing features may live in the app, including:
 
 ```txt
 /dashboard
+/university
 /ecosystem
 /registry
 /tools
@@ -64,6 +65,18 @@ Public/member-facing features may live in the app, including:
 /api/tools
 /api/stats
 ```
+
+## University of OneGodian Integration
+
+The `/university` route is the app-native discovery gateway for eight schools and sixty structured courses.
+
+Canonical LMS authority:
+
+```txt
+https://u.onegodian.org
+```
+
+The LMS remains responsible for enrollment, lessons, quizzes, assignments, progress, payments, live classes, and certificate issuance. The app must use `NEXT_PUBLIC_U_ONEGODIAN_URL` and must not hard-code the obsolete `.com` LMS domain.
 
 ## Restricted Console-Only Areas
 
@@ -116,12 +129,15 @@ Set these in Hostinger or the cloud hosting panel. Do not commit real secrets.
 
 ```env
 NEXT_PUBLIC_APP_URL=https://app.onegodian.com
+NEXT_PUBLIC_U_ONEGODIAN_URL=https://u.onegodian.org
 NEXTAUTH_URL=https://app.onegodian.com
 NEXTAUTH_SECRET=
 AUTH_TRUST_HOST=true
 DATABASE_URL=
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
+UNIVERSITY_LMS_MANIFEST_URL=https://u.onegodian.org/wp-json/onegodian-university-lms/v1/manifest
+ONEGODIAN_UNIVERSITY_LMS_BRIDGE_KEY=
 ```
 
 ## Hostinger deployment settings
