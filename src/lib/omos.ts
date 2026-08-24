@@ -13,12 +13,19 @@ export type OmosManifest = {
   links?: Record<string, string>;
 };
 
+export function getOmosManifestUrl() {
+  return process.env.OMOS_MANIFEST_URL || `${DEFAULT_OMOS_URL}/api/manifest`;
+}
+
 export function getOmosBaseUrl() {
-  return (process.env.OMOS_RUNTIME_URL || DEFAULT_OMOS_URL).replace(/\/$/, '');
+  const explicit = process.env.OMOS_RUNTIME_URL || process.env.NEXT_PUBLIC_OMOS_URL;
+  if (explicit) return explicit.replace(/\/$/, '');
+
+  return getOmosManifestUrl().replace(/\/api\/manifest\/?$/, '');
 }
 
 export async function getOmosManifest(): Promise<OmosManifest> {
-  const response = await fetch(`${getOmosBaseUrl()}/api/manifest`, {
+  const response = await fetch(getOmosManifestUrl(), {
     next: { revalidate: 60 },
     headers: { Accept: 'application/json' },
   });
