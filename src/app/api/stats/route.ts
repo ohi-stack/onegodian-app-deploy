@@ -1,21 +1,2 @@
-import { NextResponse } from 'next/server';
-
-export async function GET() {
-  return NextResponse.json({
-    platform: 'OneGodian App',
-    status: 'operational',
-    modules: [
-      'dashboard',
-      'ecosystem',
-      'registry',
-      'members',
-      'products',
-      'media',
-      'capital',
-      'omos',
-      'learning',
-    ],
-    deployment: 'hostinger-auto-deploy',
-    timestamp: new Date().toISOString(),
-  });
-}
+import { NextResponse } from 'next/server'; import { appCards, routes, wpBridgeShortcodes } from '@/data/appRegistry';
+export async function GET(){return NextResponse.json({platform:'OneGodian App',status:'operational',domainRole:'public/member-facing app gateway',routeCount:routes.length,dashboardCardCount:appCards.length,wordpressBridgeShortcodeCount:wpBridgeShortcodes.length,contributionProcessing:false,privilegedConsoleFunctions:false,timestamp:new Date().toISOString()});}
