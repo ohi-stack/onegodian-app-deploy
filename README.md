@@ -1,178 +1,27 @@
-# onegodian-app-deploy
+# onegodian-app-deploy — RETIRED
 
-Deployment-ready Next.js application for `app.onegodian.com`.
+> **Status: RETIRED / DO NOT DEPLOY**
 
-This repository is now the production-facing source of truth for the OneGodian Everything App deployment.
+The `app.onegodian.com` subdomain has been deleted and the standalone OneGodian App architecture has been superseded by the interconnected OneGodian Platform.
 
-The earlier development/source repository was:
+This repository is preserved only as a historical deployment/source archive. It is **not** the production source of truth and must not be connected to Hostinger, DNS, CI/CD deployment, navigation, manifests, dashboards, or other active platform dependencies.
 
-```txt
-ohi-stack/onegodian-app
-```
+## Current architecture
 
-The deploy repository now carries the consolidated app direction for Hostinger-compatible deployment, route standards, domain separation, and public/member-facing app behavior.
+- `OneGodian.org` — ORGANIZATION
+- `OneGodian.com` — STORE
+- `u.OneGodian.com` — EDUCATION
+- `galaxy.OneGodian.com` — GALAXY
+- `ODeFi.OneGodian.com` — CAPITAL / finance
+- `OMOS.OneGodian.com` — PROTOCOL / developer layer
+- `api.OneGodian.org` — SHARED PLATFORM CORE
 
-## Production domain
+Gregory’s OneGodian Ecosystem Plugin™ connects authorized WordPress properties to `api.OneGodian.org`.
 
-```txt
-https://app.onegodian.com
-```
+The **OneGodian MCP Gateway™** is the central MCP entry point through `api.OneGodian.org`.
 
-## Purpose
+## Historical files
 
-The OneGodian App is the public and member-facing experience layer for the OneGodian ecosystem.
+Legacy application code, plugin copies, environment examples, deployment instructions, and build workflows remain only to preserve development history. They must not be interpreted as current deployment instructions.
 
-It provides identity-facing and member-facing application routes, including dashboards, ecosystem navigation, registry viewing, products, certificates, tools, media, settings, documentation, and connected platform access.
-
-## Domain Separation Rule
-
-App = experience.
-
-Console = control.
-
-The OneGodian App must not contain internal command-console features, privileged operator tools, ACC execution controls, OCP policy mutation, OEG execution routing, adapter administration, approval queues, kill-switch controls, internal audit/log mutation tools, deployment controls, or administrative command surfaces.
-
-Internal command/control functions belong under the separate OneGodian Console surface at:
-
-```txt
-https://console.onegodian.com
-```
-
-## Allowed App Areas
-
-Public/member-facing features may live in the app, including:
-
-```txt
-/dashboard
-/ecosystem
-/registry
-/tools
-/members
-/certificates
-/products
-/media
-/settings
-/docs
-/galaxy
-/time
-/time/dual-dating
-/omos
-/capital
-/learning
-/api/health
-/api/manifest
-/api/tools
-/api/stats
-```
-
-## Restricted Console-Only Areas
-
-Do not place these inside the OneGodian App:
-
-```txt
-ACC
-agent administration
-OCP authorization controls
-OEG execution routing
-workflow administration
-policy editing
-approvals
-audit mutation
-internal logs
-adapters
-deployment controls
-kill-switch controls
-```
-
-## Required root structure
-
-Hostinger should detect this repository as a valid Next.js project from the repository root.
-
-```txt
-package.json
-package-lock.json
-next.config.js
-tsconfig.json
-tailwind.config.ts
-postcss.config.js
-src/
-prisma/
-public/
-.env.example
-```
-
-## Required scripts
-
-```bash
-npm install
-npm run lint
-npm run build
-npm run start
-```
-
-## Environment variables
-
-Set these in Hostinger or the cloud hosting panel. Do not commit real secrets.
-
-```env
-NEXT_PUBLIC_APP_URL=https://app.onegodian.com
-NEXTAUTH_URL=https://app.onegodian.com
-NEXTAUTH_SECRET=
-AUTH_TRUST_HOST=true
-DATABASE_URL=
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
-```
-
-## Hostinger deployment settings
-
-```txt
-Repository: ohi-stack/onegodian-app-deploy
-Root directory: .
-Install command: npm install
-Build command: npm run build
-Start command: npm run start
-Node version: 20 LTS or 22 LTS
-```
-
-## DNS
-
-Use the DNS target supplied by Hostinger.
-
-For CNAME routing:
-
-```txt
-Type: CNAME
-Name: app
-Value: Hostinger-provided target
-```
-
-For IP routing:
-
-```txt
-Type: A
-Name: app
-Value: server IP
-```
-
-## Deployment rule
-
-Only deploy after:
-
-```bash
-npm install
-npm run lint
-npm run build
-```
-
-all pass from the repository root.
-
-## Current standard
-
-If a feature is public-facing or member-facing, it may live in the App.
-
-If a feature is operator-facing, privileged, administrative, or execution-governing, it belongs in the Console.
-
-## Production priority
-
-Keep `app.onegodian.com` synchronized with this deploy repository after every content, routing, integration, or UI update.
+Do not deploy this repository to `app.onegodian.com`.
