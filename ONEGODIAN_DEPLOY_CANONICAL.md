@@ -1,46 +1,21 @@
-# ONEGODIAN App Deploy Repository — Canonical Deployment Source
+# ONEGODIAN App Deploy Repository — RETIRED
 
-`ohi-stack/onegodian-app-deploy` is the canonical deployment repository for `app.onegodian.com`.
+> **Historical record only. This repository is not a current deployment source.**
 
-## Source Consolidation Rule
+The former `app.onegodian.com` deployment has been retired and the subdomain has been deleted.
 
-Useful route files, reusable UI components, bridge clients, API handlers, documentation, and deployment scripts from `ohi-stack/onegodian-app` must be moved into this repository before production deployment.
+## Current deployment authority
 
-After consolidation, production deployment should read from this repository only.
+There is no replacement standalone OneGodian App deployment. The product is the interconnected OneGodian Platform.
 
-## Required App Routes
+- Organization: `OneGodian.org`
+- Store: `OneGodian.com`
+- Education: `u.OneGodian.com`
+- Galaxy: `galaxy.OneGodian.com`
+- Capital / finance: `ODeFi.OneGodian.com`
+- Protocol / developer: `OMOS.OneGodian.com`
+- Shared platform core: `api.OneGodian.org`
 
-The production app surface must include:
+Gregory’s OneGodian Ecosystem Plugin™ provides distributed WordPress integration through the API core. OneGodian MCP Gateway™ is the central MCP entry point through `api.OneGodian.org`.
 
-- `/dashboard`
-- `/ecosystem`
-- `/registry`
-- `/members`
-- `/products`
-- `/media`
-- `/capital`
-- `/omos`
-- `/learning`
-
-## Required API Routes
-
-The production API surface must include:
-
-- `/api/health`
-- `/api/manifest`
-- `/api/tools`
-- `/api/stats`
-
-## WordPress Plugin Bridges
-
-The app bridge layer must support:
-
-- OneGodian Members
-- OneGodian Platform
-- OneGodian Capital
-
-Bridge authentication should use the `X-OMOS-App-Key` header and environment variable based configuration.
-
-## Production Rule
-
-Do not deploy `ohi-stack/onegodian-app` directly to `app.onegodian.com` after this consolidation. Treat that repository as legacy/source-reference only unless intentionally archived or redirected.
+Do not connect Hostinger, DNS, CI/CD, or production navigation to this repository as an App deployment target.
