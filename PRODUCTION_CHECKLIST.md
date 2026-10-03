@@ -1,62 +1,15 @@
-# OneGodian App Production Checklist
+# OneGodian App Production Checklist — RETIRED
 
-## Build
+There is no active production checklist for `app.onegodian.com` because the standalone App is retired.
 
-- npm install
-- npm run lint
-- npm run build
-- npm run start
+## Archive verification
 
-## Routes
+- [x] Repository README identifies the App as retired.
+- [x] `.env.example` does not advertise App production credentials.
+- [x] Automatic App-era build workflows are disabled.
+- [x] Current architecture points cross-property integration to `api.OneGodian.org`.
+- [x] Active education domain is `u.OneGodian.com`.
+- [x] Active finance domain is `ODeFi.OneGodian.com`.
+- [x] OneGodian MCP Gateway™ is assigned to the shared API core.
 
-- /dashboard
-- /ecosystem
-- /registry
-- /tools
-- /members
-- /certificates
-- /products
-- /media
-- /settings
-- /docs
-
-## APIs
-
-- /api/health
-- /api/manifest
-- /api/tools
-- /api/stats
-
-## Navigation
-
-- desktop navigation
-- mobile navigation
-- footer links
-- ecosystem links
-
-## Security
-
-- SSL enabled
-- secrets not committed
-- environment variables configured
-- no Console-only routes exposed
-
-## Deployment
-
-- commit pushed to main
-- Hostinger deployment successful
-- deployment logs reviewed
-- live app verified
-
-## Future Console Separation
-
-Verify these remain absent from the App deployment:
-
-- ACC
-- OCP
-- OEG
-- agents
-- approvals
-- audit mutation
-- internal logs
-- adapter administration
+Any future production checklist belongs in the repository that owns the specialized property being deployed.
